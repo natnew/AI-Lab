@@ -1,6 +1,5 @@
 {
   "name": "Agent API Calls",
   "description": "A Langchain-based agent to generate API requests from user queries.",
-  "tags": ["agent", "api", "langchain"],
   "entry_point": "main.py"
 }

@@ -1,0 +1,5 @@
+{
+    "name": "QA Bot for Technical Documentation",
+    "description": "A bot that answers questions based on technical documentation using Cohere embeddings and LlamaIndex.",
+    "entry_point": "main.py"
+}

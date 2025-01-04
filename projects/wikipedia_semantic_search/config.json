@@ -1,0 +1,6 @@
+{
+    "name": "Wikipedia Semantic Search",
+    "description": "Perform semantic search on Wikipedia Simple English using Cohere embeddings.",
+    "entry_point": "main.py"
+  }
+  

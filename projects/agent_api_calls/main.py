@@ -43,15 +43,38 @@ def convert_to_json(string: str) -> json:
 
 # Streamlit App UI
 def main():
-    st.title("Agent API Calls")
-    st.write("This project demonstrates how an agent generates API requests based on user queries.")
+    # Tags Information Box
+    st.info("**Tags:** agent, api, langchain")
+
+    # Expandable "How it works" Section
+    with st.expander("How it works"):
+        st.write("""
+        The **Agent API Calls** project allows you to dynamically generate API requests from user queries using LangChain and Cohere. Here’s how it works:
+        
+        1. **User Query**:
+        - Enter a query in the text input field. For example, "Retrieve id 12345-abcdef".
+        2. **Regex Extraction**:
+        - The system uses regex patterns to extract alphanumeric codes (e.g., UUIDs, object references) from the query.
+        3. **API Request Generation**:
+        - Based on the extracted information, the app constructs a JSON API request.
+        4. **Output**:
+        - The API request is displayed as JSON for inspection or further usage.
+        """)
+
+    
 
     user_query = st.text_area("Enter your query:", "Retrieve id 7410e652-639d-402e-984e-8fd7025f0aac...")
     if st.button("Generate API Request"):
         with st.spinner("Processing..."):
-            response = agent_executor.invoke({"input": user_query, "preamble": preamble})
-            formatted_response = convert_to_json(response['output'])
-            st.json(formatted_response)
+            st.write("Executing agent...")  # Debug message
+            try:
+                response = agent_executor.invoke({"input": user_query, "preamble": preamble})
+                st.write("Agent response:", response)  # Debug message to inspect raw output
+                formatted_response = convert_to_json(response['output'])
+                st.json(formatted_response)
+            except Exception as e:
+                st.error(f"An error occurred: {e}")
+
 
 if __name__ == "__main__":
     main()

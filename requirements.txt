@@ -14,3 +14,8 @@ langchain
 cohere
 python-dotenv
 langchain-cohere
+llama-index
+llama-index-llms-cohere
+llama-index-embeddings-cohere
+llama-index-embeddings-cohere
+datasets

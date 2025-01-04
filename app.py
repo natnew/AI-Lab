@@ -1,6 +1,11 @@
 import streamlit as st
 from utils.loader import load_projects
 from utils.navigation import load_project_entry
+import sys
+import os
+
+# Add the project root to sys.path
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
 # Load all projects
 projects = load_projects()
@@ -19,7 +24,7 @@ for project in projects:
     if project["name"] == selected_project:
         st.title(project["name"])
         st.write(project["description"])
-        st.write("Tags:", ", ".join(project["tags"]))
+        
 
         # Load and Run the Project
         entry_point = project["path"] + "/" + project["entry_point"]
