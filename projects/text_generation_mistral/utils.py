@@ -2,13 +2,22 @@ import openai
 import streamlit as st
 
 def generate_text(prompt):
-    openai.api_key = st.secrets["openai_api_key"]
+    # Fetch the OpenAI API key from Streamlit secrets
+    api_key = st.secrets["openai"]["openai_api_key"]
+    
+    # Instantiate the OpenAI client
+    client = OpenAI(api_key=api_key)
 
-    if not openai.api_key:
-        raise ValueError("API key is missing. Please configure it in Streamlit secrets.")
-
-    response = openai.ChatCompletion.create(
-        model="mistral-7b-chat",
-        messages=[{"role": "user", "content": prompt}],
+    # Generate the text completion
+    response = client.chat.completions.create(
+        model="gpt-4o",  # Replace with the correct model, e.g., `mistral-7b` if available
+        messages=[
+            {
+                "role": "user",
+                "content": prompt,
+            }
+        ]
     )
-    return response['choices'][0]['message']['content']
+
+    # Return the generated text
+    return response.choices[0].message.content
