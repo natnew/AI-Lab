@@ -1,21 +1,4 @@
-streamlit                # For building the main app
-pandas                   # For data manipulation (if needed)
-numpy                    # For numerical computations (if needed)
-matplotlib               # For plotting and visualisations
-scikit-learn             # For machine learning models (if applicable)
-torch                    # For PyTorch-based projects (if applicable)
-tensorflow               # For TensorFlow-based projects (if applicable)
-Pillow                   # For image processing
-plotly                   # For interactive visualisations
-importlib-metadata       # For dynamic module loading
-jsonschema               # For validating project configuration files
-pyyaml                   # For parsing YAML (if you want an alternative to JSON)
-langchain
-cohere
-python-dotenv
-langchain-cohere
-llama-index
-llama-index-llms-cohere
-llama-index-embeddings-cohere
-llama-index-embeddings-cohere
-datasets
+streamlit
+openai
+
+

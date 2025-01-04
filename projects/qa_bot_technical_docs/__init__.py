@@ -1,3 +1,0 @@
-from utils.navigation import setup_cohere_api
-from projects.qa_bot_technical_docs.retriever import initialize_retriever, retrieve_documents
-

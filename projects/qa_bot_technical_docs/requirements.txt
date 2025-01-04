@@ -1,6 +1,0 @@
-streamlit
-cohere
-datasets
-llama-index
-llama-index-llms-cohere
-llama-index-embeddings-cohere
